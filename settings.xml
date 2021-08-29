@@ -1,0 +1,51 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>${user.home}/.m2/repository</localRepository>
+    <interactiveMode>true</interactiveMode>
+    <servers>
+        <server>
+            <id>snapshots</id>
+            <username>isda</username>
+            <password>isda</password>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>artifactory</id>
+            <repositories>
+                <repository>
+                    <snapshots/>
+                    <id>central</id>
+                    <name>maven2</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </repository>
+
+                <repository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>https://regnosys.jfrog.io/regnosys/libs-snapshot</url>
+                </repository>
+
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>central</id>
+                    <name>maven2</name>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>artifactory</activeProfile>
+    </activeProfiles>
+
+
+</settings>
